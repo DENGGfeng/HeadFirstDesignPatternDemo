@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter.1-StrategyPattern", "Chapter.1-DuckDemo\Chapter.1-StrategyPattern.csproj", "{DCA59C33-F73C-4F48-AFD2-CC2C752DA81B}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DCA59C33-F73C-4F48-AFD2-CC2C752DA81B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCA59C33-F73C-4F48-AFD2-CC2C752DA81B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCA59C33-F73C-4F48-AFD2-CC2C752DA81B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCA59C33-F73C-4F48-AFD2-CC2C752DA81B}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6E98CA03-BA40-4547-B7DF-D09E780FA24B}
+	EndGlobalSection
+EndGlobal
