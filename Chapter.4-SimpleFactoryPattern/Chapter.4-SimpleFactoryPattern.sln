@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31025.194
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chapter.4-SimpleFactoryPattern", "Chapter.4-SimpleFactoryPattern\Chapter.4-SimpleFactoryPattern.csproj", "{E1A46E48-3592-481B-A17A-5FE44F305476}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FatoryPattern", "FatoryPattern\FatoryPattern.csproj", "{89148873-CF7C-4019-B680-9A2AC9BDCF23}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{E1A46E48-3592-481B-A17A-5FE44F305476}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1A46E48-3592-481B-A17A-5FE44F305476}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1A46E48-3592-481B-A17A-5FE44F305476}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1A46E48-3592-481B-A17A-5FE44F305476}.Release|Any CPU.Build.0 = Release|Any CPU
+		{89148873-CF7C-4019-B680-9A2AC9BDCF23}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{89148873-CF7C-4019-B680-9A2AC9BDCF23}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{89148873-CF7C-4019-B680-9A2AC9BDCF23}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{89148873-CF7C-4019-B680-9A2AC9BDCF23}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {632223F4-59B0-4C32-AE86-7C6AA9E7B090}
+	EndGlobalSection
+EndGlobal
