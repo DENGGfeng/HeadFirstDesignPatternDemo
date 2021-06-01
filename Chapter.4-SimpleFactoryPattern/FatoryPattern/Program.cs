@@ -6,136 +6,55 @@ namespace FatoryPattern
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            PizzaStore nyStore = new NYPizzaStore();
+            PizzaStore chicagoStore = new ChicagoPizzaStore();
+
+            Pizza pizza = nyStore.OrderPizza("cheese");
+
+            Console.WriteLine($"Ethan orderde a {pizza.GetName()}");
+
+            pizza = chicagoStore.OrderPizza("cheese");
+
+            Console.WriteLine($"Joel orderde a {pizza.GetName()}");
         }
     }
 
-    public class Pizza
+    public class NYPizzaIngredientFactory : PizzaIngredientFactory
     {
-        protected string name;
-        protected string dough;
-        protected string sauce;
+        public Cheese CreateCheese() => new ReggianoCheese();
+        public Clam CreateClam() => new FreshClam();
+        public Dough CreateDough() => new ThinCrustDough();
+        public Pepperoni CreatePepperoni() => new SlicedPepperoni();
+        public Sauce CreateSauce() => new MarinaraSauce();
 
-        public virtual void Prepare()
+        public Veggies[] CreateVeggies()
         {
-            Console.WriteLine($"Preparing {name}");
-            Console.WriteLine("tossing dough...");
-            Console.WriteLine("Adding sauce...");
-            Console.WriteLine("Adding toppings...");
+            return new Veggies[]
+            {
+                new Gralic(),
+                new Onion() ,
+                new Mushroom(),
+                new RedPepper()
+            };
         }
-        public virtual void Box()
+    }
+
+    public class ClamPizza : Pizza
+    {
+        PizzaIngredientFactory ingredientFactory;
+
+        public ClamPizza(PizzaIngredientFactory ingredientFactory)
         {
-            Console.WriteLine("Place pizza in official PizzaStore box.");
+            this.ingredientFactory = ingredientFactory;
         }
 
-        public virtual void Bake()
+        public override void Prepare()
         {
-            Console.WriteLine("Bake for 25 minutes at 350.");
+            Console.WriteLine($"Preparing {name}...");
+            dough = ingredientFactory.CreateDough();
+            sauce = ingredientFactory.CreateSauce();
+            cheese = ingredientFactory.CreateCheese();
+            clam = ingredientFactory.CreateClam();
         }
-
-        public virtual void Cut()
-        {
-            Console.WriteLine("Cutting the pizza inteo digonal slices.");
-        }
-
-        public string GetName() => name;
-    }
-
-    public abstract class PizzaStore
-    {
-        public Pizza OrderPizza(string type)
-        {
-            Pizza pizza;
-            pizza = CreatePizza(type);
-            pizza.Prepare();
-            pizza.Bake();
-            pizza.Cut();
-            pizza.Box();
-            return pizza;
-        }
-
-        protected abstract Pizza CreatePizza(string type);
-    }
-
-    public class NYPizzaStore : PizzaStore
-    {
-        protected override Pizza CreatePizza(string type)
-        {
-            Pizza pizza = null;
-            if (type.Equals("cheese"))
-            {
-                pizza = new NYCheesePizza();
-            }
-            else if (type.Equals("pepperoni"))
-            {
-                pizza = new NYPepperoniPizza();
-            }
-            else if (type.Equals("clam"))
-            {
-                pizza = new NYClam();
-            }
-            else if (type.Equals("veggie"))
-            {
-                pizza = new NYVeggie();
-            }
-            return pizza;
-        }
-    }
-
-    public class ChicagoPizzaStore : PizzaStore
-    {
-        protected override Pizza CreatePizza(string type)
-        {
-            Pizza pizza = null;
-            if (type.Equals("cheese"))
-            {
-                pizza = new ChicagoCheesePizza();
-            }
-            else if (type.Equals("pepperoni"))
-            {
-                pizza = new ChicagoPepperoniPizza();
-            }
-            else if (type.Equals("clam"))
-            {
-                pizza = new ChicagoClam();
-            }
-            else if (type.Equals("veggie"))
-            {
-                pizza = new ChicagoVeggie();
-            }
-            return pizza;
-        }
-    }
-
-    internal class ChicagoVeggie : Pizza
-    {
-    }
-
-    internal class ChicagoClam : Pizza
-    {
-    }
-
-    internal class ChicagoPepperoniPizza : Pizza
-    {
-    }
-
-    internal class ChicagoCheesePizza : Pizza
-    {
-    }
-
-    internal class NYVeggie : Pizza
-    {
-    }
-
-    internal class NYClam : Pizza
-    {
-    }
-
-    internal class NYPepperoniPizza : Pizza
-    {
-    }
-
-    internal class NYCheesePizza : Pizza
-    {
     }
 }
